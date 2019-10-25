@@ -31,8 +31,8 @@ dependencies {
     implementation project(':common_base')
     if (!Boolean.valueOf(rootProject.ext.isModule)) {
         //main模块
-        implementation project(':module_main')
-        implementation project(':module_market')
-        implementation project(':module_wan_android')
+        implementation project(':main_module')
+        implementation project(':me_module')
+        implementation project(':other_module')
     }
 }
