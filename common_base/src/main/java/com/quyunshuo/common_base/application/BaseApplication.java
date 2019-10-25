@@ -1,4 +1,4 @@
-package com.quyunshuo.common_base;
+package com.quyunshuo.common_base.application;
 
 import android.app.Application;
 import android.content.Context;

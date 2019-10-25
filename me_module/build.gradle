@@ -4,7 +4,7 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
     apply plugin: 'com.android.library'
 }
 
-def  version=rootProject.ext.versions
+def version = rootProject.ext.versions
 
 android {
     compileSdkVersion version.compileSdkVersion
@@ -27,6 +27,21 @@ android {
         }
     }
 
+    //根据不同的模式加载不同的AndroidManifest文件
+    sourceSets {
+        main {
+            if (Boolean.valueOf(rootProject.ext.isModule)) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/module文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
+        }
+    }
+
 }
 
 dependencies {
@@ -34,4 +49,6 @@ dependencies {
 
     //公用依赖包
     implementation project(':common_base')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

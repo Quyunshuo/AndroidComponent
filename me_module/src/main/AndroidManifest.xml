@@ -1,2 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.quyunshuo.me_module" />
+    package="com.quyunshuo.me_module">
+
+    <application>
+        <activity android:name=".MeActivity"></activity>
+    </application>
+
+</manifest>
