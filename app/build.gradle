@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 def  version=rootProject.ext.versions
+def depend = rootProject.ext.dependencies
 
 android {
     compileSdkVersion version.compileSdkVersion
@@ -13,6 +14,13 @@ android {
         versionCode version.versionCode
         versionName version.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //ARouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -34,4 +42,7 @@ dependencies {
         implementation project(':me_module')
         implementation project(':other_module')
     }
+
+    //阿里路由
+    api depend["arouter_api"]
 }

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 def version = rootProject.ext.versions
-def depend=rootProject.ext.dependencies
+def depend = rootProject.ext.dependencies
 android {
     compileSdkVersion version.compileSdkVersion
     buildToolsVersion version.buildToolsVersion
@@ -15,6 +15,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+
+        //ARouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -36,4 +43,8 @@ dependencies {
     api depend["junit"]
     api depend["runner"]
     api depend["espressocore"]
+    //阿里路由
+    api depend["arouter_api"]
+    annotationProcessor depend["arouter_compiler"]
+
 }
