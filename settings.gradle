@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':main_module', ':me_module', ':other_module', ':common_base'
 rootProject.name='AndroidComponent'
