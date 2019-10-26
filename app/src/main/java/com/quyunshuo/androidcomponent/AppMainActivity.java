@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+
 @Route(path = "/app/AppMainActivity")
 public class AppMainActivity extends AppCompatActivity {
 
@@ -15,16 +16,16 @@ public class AppMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_app_main);
         initView();
     }
 
     private void initView() {
         mARouterTv = findViewById(R.id.arouter_tv);
-        mARouterTv.setOnClickListener(v -> {
-            ARouter.getInstance()
-                    .build("/main_module/MainActivity")
-                    .navigation();
-        });
+        mARouterTv.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build("/main/MainActivity")
+                        .navigation()
+        );
     }
 }

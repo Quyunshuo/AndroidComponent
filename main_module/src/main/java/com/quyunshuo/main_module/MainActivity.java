@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/main_module/MainActivity")
+@Route(path = "/main/MainActivity")
 public class MainActivity extends AppCompatActivity {
 
     @Override

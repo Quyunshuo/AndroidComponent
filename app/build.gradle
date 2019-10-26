@@ -48,5 +48,5 @@ dependencies {
     }
 
     //阿里路由
-    api depend["arouter_api"]
+    annotationProcessor depend["arouter_compiler"]
 }
