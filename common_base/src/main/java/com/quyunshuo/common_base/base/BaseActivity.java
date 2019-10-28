@@ -2,6 +2,7 @@ package com.quyunshuo.common_base.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -18,6 +19,8 @@ import com.quyunshuo.common_base.utils.StatusBarUtil;
 public abstract class BaseActivity extends FragmentActivity {
 
     protected Context mContext;
+    //用于发送延时任务
+    protected Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,4 +52,12 @@ public abstract class BaseActivity extends FragmentActivity {
      */
     protected abstract int getLayoutId();
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //移除延时任务
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+    }
 }

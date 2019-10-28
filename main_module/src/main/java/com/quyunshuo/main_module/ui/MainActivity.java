@@ -1,4 +1,4 @@
-package com.quyunshuo.main_module;
+package com.quyunshuo.main_module.ui;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -15,6 +15,7 @@ import com.quyunshuo.common_base.base.BaseFragment;
 import com.quyunshuo.common_base.constants.ARouterConfig;
 import com.quyunshuo.common_base.utils.ARouterUtils;
 import com.quyunshuo.common_base.utils.StatusBarUtil;
+import com.quyunshuo.main_module.R;
 import com.quyunshuo.main_module.adapter.ViewPagerAdapter;
 
 import java.util.ArrayList;
