@@ -3,10 +3,12 @@
 
     //main
     <string name="main_module">MainModule</string>
+    <string name="main">Main</string>
 
     //me
     <string name="memodule">MeModule</string>
+    <string name="me">Me</string>
 
     //other
-
+    <string name="other">Other</string>
 </resources>

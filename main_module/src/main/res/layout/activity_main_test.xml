@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OtherActivity">
+    tools:context=".MainTestActivity">
 
     <fragment
-        android:id="@+id/other_fragment"
-        class="com.quyunshuo.other_module.fragment.OtherFragment"
+        android:id="@+id/main_fragment"
+        class="com.quyunshuo.main_module.fragment.MainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

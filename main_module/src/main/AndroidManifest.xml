@@ -3,6 +3,7 @@
     package="com.quyunshuo.main_module">
 
     <application>
+        <activity android:name=".MainTestActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
