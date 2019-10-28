@@ -5,8 +5,8 @@
     <string name="main_module">MainModule</string>
     <string name="main">Main</string>
     <string name="main_splash_text">Welcome to Android Component!</string>
+
     //me
-    <string name="memodule">MeModule</string>
     <string name="me">Me</string>
 
     //other

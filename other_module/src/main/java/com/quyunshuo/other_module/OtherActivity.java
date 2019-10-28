@@ -1,16 +1,31 @@
 package com.quyunshuo.other_module;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.Color;
+import android.os.Build;
 
-import android.os.Bundle;
+import com.quyunshuo.common_base.base.BaseActivity;
+import com.quyunshuo.common_base.utils.StatusBarUtil;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
-
-public class OtherActivity extends AppCompatActivity {
+public class OtherActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other);
+    protected void initView() {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_other;
+    }
+
+    @Override
+    public void setStatusBarColor(int resId) {
+        super.setStatusBarColor(resId);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            StatusBarUtil.setColor(OtherActivity.this, Color.WHITE);
+            StatusBarUtil.setDarkMode(OtherActivity.this);
+        } else {
+            StatusBarUtil.setColor(OtherActivity.this, Color.GRAY);
+        }
     }
 }

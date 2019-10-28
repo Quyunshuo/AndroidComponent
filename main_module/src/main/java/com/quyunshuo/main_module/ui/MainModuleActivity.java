@@ -4,34 +4,32 @@ import android.graphics.Color;
 import android.os.Build;
 
 import com.quyunshuo.common_base.base.BaseActivity;
-import com.quyunshuo.common_base.constants.ARouterConfig;
-import com.quyunshuo.common_base.utils.ARouterUtils;
 import com.quyunshuo.common_base.utils.StatusBarUtil;
 import com.quyunshuo.main_module.R;
 
-public class SplashActivity extends BaseActivity {
+/**
+ * 此Activity作为当前module单独运行时的启动Activity，集成开发模式下可忽略
+ */
+public class MainModuleActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mHandler.postDelayed(() -> {
-            ARouterUtils.getActivity(ARouterConfig.MAIN_ACTIVITY);
-            finish();
-        }, 2500);
+
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_splash;
+        return R.layout.activity_main_module;
     }
 
     @Override
     public void setStatusBarColor(int resId) {
         super.setStatusBarColor(resId);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            StatusBarUtil.setColor(SplashActivity.this, Color.WHITE);
-            StatusBarUtil.setDarkMode(SplashActivity.this);
+            StatusBarUtil.setColor(MainModuleActivity.this, Color.WHITE);
+            StatusBarUtil.setDarkMode(MainModuleActivity.this);
         } else {
-            StatusBarUtil.setColor(SplashActivity.this, Color.GRAY);
+            StatusBarUtil.setColor(MainModuleActivity.this, Color.GRAY);
         }
     }
 }
