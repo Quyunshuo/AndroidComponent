@@ -1,9 +1,12 @@
 package com.quyunshuo.main_module;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.quyunshuo.common_base.base.BaseActivity;
+import com.quyunshuo.common_base.utils.StatusBarUtil;
 
 @Route(path = "/main/MainActivity")
 public class MainActivity extends BaseActivity {
@@ -25,6 +28,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setStatusBarColor(int resId) {
-        super.setStatusBarColor(R.color.main_color);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            StatusBarUtil.setColor(MainActivity.this, Color.WHITE);
+            StatusBarUtil.setDarkMode(MainActivity.this);
+        } else {
+            StatusBarUtil.setColor(MainActivity.this, Color.GRAY);
+        }
     }
 }
