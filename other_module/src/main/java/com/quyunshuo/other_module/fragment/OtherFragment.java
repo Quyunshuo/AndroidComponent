@@ -8,9 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.quyunshuo.common_base.base.BaseFragment;
 import com.quyunshuo.other_module.R;
 
-public class OtherFragment extends Fragment {
+@Route(path = "/other/OtherFragment")
+public class OtherFragment extends BaseFragment {
 
     public OtherFragment() {
         // Required empty public constructor
@@ -24,6 +27,11 @@ public class OtherFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override

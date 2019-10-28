@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-@Route(path = "/other/OtherActivity")
 public class OtherActivity extends AppCompatActivity {
 
     @Override

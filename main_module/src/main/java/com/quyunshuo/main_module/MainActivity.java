@@ -24,6 +24,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        initBottomNavigationBar();
+
+    }
+
+    /**
+     * 初始化BottomNavigationBar
+     */
+    private void initBottomNavigationBar() {
         BottomNavigationBar mBottomNavigationBar = findViewById(R.id.bottom_navigation);
         mBottomNavigationBar.setMode(MODE_FIXED) // 设置mode
                 .setBackgroundStyle(BACKGROUND_STYLE_RIPPLE)  // 背景样式

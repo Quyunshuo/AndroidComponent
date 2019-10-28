@@ -8,9 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.quyunshuo.common_base.base.BaseFragment;
 import com.quyunshuo.me_module.R;
 
-public class MeFragment extends Fragment {
+import java.nio.file.Path;
+
+@Route(path = "/me/MeFragment")
+public class MeFragment extends BaseFragment {
 
     public MeFragment() {
         // Required empty public constructor
@@ -24,6 +29,11 @@ public class MeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
