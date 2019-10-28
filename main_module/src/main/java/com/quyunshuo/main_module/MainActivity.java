@@ -22,4 +22,9 @@ public class MainActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
+
+    @Override
+    public void setStatusBarColor(int resId) {
+        super.setStatusBarColor(R.color.main_color);
+    }
 }

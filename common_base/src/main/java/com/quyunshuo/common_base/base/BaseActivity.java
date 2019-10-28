@@ -4,7 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+
+import com.quyunshuo.common_base.R;
+import com.quyunshuo.common_base.utils.StatusBarUtil;
 
 /**
  * @Author: MiYan
@@ -20,7 +24,17 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(getLayoutId());
+        setStatusBarColor(R.color.main);
         initView();
+    }
+
+    /**
+     * 设置状态栏的颜色
+     *
+     * @param resId
+     */
+    public void setStatusBarColor(int resId) {
+        StatusBarUtil.setColor(this, ContextCompat.getColor(this, resId), 0);
     }
 
     /**
