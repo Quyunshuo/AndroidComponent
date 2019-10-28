@@ -37,6 +37,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.releaseConfig
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    if (variant.name.endsWith("release")) {
+                        def debugFileName = "Android_Component_${variant.versionCode}_${variant.versionName}_${releaseTime()}_release.apk"
+                        outputFileName = new File(debugFileName)
+                    }
+                }
+            }
         }
     }
 
@@ -44,6 +52,10 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyyMMdd-hh-mm", TimeZone.getTimeZone("GMT+08:00"))
 }
 
 dependencies {
