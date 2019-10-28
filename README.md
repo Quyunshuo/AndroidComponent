@@ -17,5 +17,5 @@ app壳依赖各业务组件和功能组件
 
 业务组件各自依赖功能组件 业务组件之间不互相依赖 只被app壳所依赖
 
-![image](https://github.com/Quyunshuo/AndroidComponent/blob/master/AndroidComponent.gif)  
+![image](https://github.com/Quyunshuo/AndroidComponent/blob/master/AndroidComponent.GIF)  
 
