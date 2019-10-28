@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">common_base</string>
-    //app
-    <string name="arouter">ARouter</string>
 
     //main
-    <string name="main_module">main_module</string>
+    <string name="main_module">MainModule</string>
 
     //me
     <string name="memodule">MeModule</string>
