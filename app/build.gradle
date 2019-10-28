@@ -23,7 +23,9 @@ android {
         }
     }
 
+    //签名配置
     signingConfigs {
+        //release版
         releaseConfig {
             storeFile file('UG41E0bF.jks')
             storePassword "UG41E0bF"
@@ -37,6 +39,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.releaseConfig
+            //自定义打包命名规则
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
                     if (variant.name.endsWith("release")) {
@@ -60,7 +63,6 @@ static def releaseTime() {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
 
     //公用依赖包
     implementation project(':common_base')

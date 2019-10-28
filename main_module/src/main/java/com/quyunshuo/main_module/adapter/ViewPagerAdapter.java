@@ -35,6 +35,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         mFragmentsTitles.add("MeFragment");
     }
 
+    /**
+     * 根据传入的position返回视图实例
+     * @param position
+     * @return
+     */
     @NonNull
     @Override
     public Fragment getItem(int position) {
@@ -49,6 +54,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return null;
     }
 
+    /**
+     * 返回可用的视图数
+     *
+     * @return
+     */
     @Override
     public int getCount() {
         return mFragmentsTitles.size();
