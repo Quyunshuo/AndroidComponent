@@ -43,8 +43,11 @@ dependencies {
     api depend["junit"]
     api depend["runner"]
     api depend["espressocore"]
+
     //阿里路由
     api depend["arouter_api"]
     annotationProcessor depend["arouter_compiler"]
 
+    //BottomNavigation
+    api depend["bottom_navigation_bar"]
 }
