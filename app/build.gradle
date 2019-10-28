@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def  version=rootProject.ext.versions
+def version = rootProject.ext.versions
 def depend = rootProject.ext.dependencies
 
 android {
@@ -22,12 +22,24 @@ android {
             }
         }
     }
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file('UG41E0bF.jks')
+            storePassword "UG41E0bF"
+            keyAlias "UG41E0bF"
+            keyPassword "UG41E0bF"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
         }
     }
+
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
