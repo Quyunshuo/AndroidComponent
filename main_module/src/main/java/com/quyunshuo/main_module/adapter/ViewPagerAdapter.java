@@ -16,17 +16,17 @@ import java.util.List;
  * @Description: 描述：
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    BaseFragment mMainFragment;
-    BaseFragment mOtherFragment;
-    BaseFragment mMeFragment;
+    private BaseFragment mMainFragment;
+    private BaseFragment mOtherFragment;
+    private BaseFragment mMeFragment;
     private final List<String> mFragmentsTitles = new ArrayList<>();
 
     public ViewPagerAdapter(FragmentManager fm) {
-        super(fm);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
     public ViewPagerAdapter(FragmentManager fm, BaseFragment mMainFragment, BaseFragment mOtherFragment, BaseFragment mMeFragment) {
-        super(fm);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.mMainFragment = mMainFragment;
         this.mOtherFragment = mOtherFragment;
         this.mMeFragment = mMeFragment;
@@ -37,6 +37,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     /**
      * 根据传入的position返回视图实例
+     *
      * @param position
      * @return
      */
